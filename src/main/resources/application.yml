@@ -1,0 +1,14 @@
+server:
+  port: 8084
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/shipping
+    username: postgres
+    password: simple123
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+    show-sql: true
