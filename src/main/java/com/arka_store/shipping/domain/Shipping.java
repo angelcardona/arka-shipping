@@ -16,6 +16,7 @@ public class Shipping {
     private UUID id=UUID.randomUUID();
     private String orderId;
     private String userId;
+    private String userEmail;
     private List<ShippingItem> items;
     private LocalDateTime createAt=LocalDateTime.now();
     private ShippingStatus status=ShippingStatus.PACKING;
@@ -24,6 +25,7 @@ public class Shipping {
     private String timeInferenceToArrived;
     private LocalDateTime receivedAt;
     private LocalDateTime rejectedAt;
+
 
     public Shipping(String orderId, String userId, List<ShippingItem> items) {
         this.orderId = orderId;

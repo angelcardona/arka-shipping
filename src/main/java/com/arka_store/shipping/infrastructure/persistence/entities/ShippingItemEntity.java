@@ -11,9 +11,7 @@ import lombok.NoArgsConstructor;
 @Embeddable
 public class ShippingItemEntity {
 
-
     private Long itemId;
     private Long productId;
-    private String productName;
     private Integer quantity;
 }

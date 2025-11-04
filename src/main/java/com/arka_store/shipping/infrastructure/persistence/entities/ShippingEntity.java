@@ -19,14 +19,18 @@ import java.util.UUID;
 public class ShippingEntity {
     @Id
     private UUID id;
+    @Column(name = "order_Id")
     private String orderId;
+    @Column(name = "user_Id")
     private String userId;
+    @Column(name = "user_email")
+    private String userEmail;
     @ElementCollection(fetch = FetchType.LAZY)
     @CollectionTable(
             name = "shipping_items",
             joinColumns = @JoinColumn(name = "shipping_id")
     )
-    private List<ShippingItem> items;
+    private List<ShippingItemEntity> items;
     private LocalDateTime createAt;
     @Enumerated(EnumType.STRING)
     private ShippingStatus status=ShippingStatus.PACKING;
@@ -35,4 +39,5 @@ public class ShippingEntity {
     private String timeInferenceToArrived;
     private LocalDateTime receivedAt;
     private LocalDateTime rejectedAt;
+
 }

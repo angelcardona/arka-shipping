@@ -12,4 +12,5 @@ public interface ShippingUsesCases {
     List<Shipping> findAll();
     List<Shipping> findAllByUserId(String userId);
 
+
 }

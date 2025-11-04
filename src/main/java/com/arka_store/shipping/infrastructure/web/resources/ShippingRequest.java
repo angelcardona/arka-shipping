@@ -6,6 +6,5 @@ import java.util.List;
 
 public record ShippingRequest(String orderId,
                               String userId,
-                              List<ShippingItem> items
-                              ){
+                              List<ShippingItem> items){
 }

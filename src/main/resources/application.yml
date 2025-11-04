@@ -12,3 +12,20 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+  cloud:
+    function:
+      definition: shippingSendSupplier
+    stream:
+      bindings:
+        shippingSendEventListener-out-0:
+          destination: shipping.send.exchange
+          content-type: application/json
+          producer:
+            durable-expression: true
+
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: busrefresh
